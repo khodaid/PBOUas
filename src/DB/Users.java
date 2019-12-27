@@ -9,7 +9,7 @@ package DB;
  *
  * @author khoirul-06990
  */
-public class Users {
+public class Users{
     
     public static int Insert(String sql)
     {
