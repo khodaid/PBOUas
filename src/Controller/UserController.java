@@ -14,13 +14,13 @@ import DB.Users;
 public class UserController {
     public static ArrayList<User> user = new ArrayList<User>();
     
-    public void Insert(String username, String pass, String email)
+    public static void Insert(String username, String pass, String nama, String alamat)
     {
-        user.add(new User(username,pass,email));
-        User.Insert(username, pass, email);
+//        user.add(new User(username,pass,nama,alamat));
+        Users.Insert(User.Insert(username, pass, nama, alamat));
     }
     
-    public void Update(String username, String pass)
+    public static void Update(String username, String pass)
     {
         for (int i = 0; i<user.size(); i++)
         {
@@ -32,7 +32,7 @@ public class UserController {
         }
     }
     
-    public void Delete (String username, String pass)
+    public static void Delete (String username, String pass)
     {
         for (int i = 0; i<user.size(); i++)
         {

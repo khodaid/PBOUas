@@ -9,13 +9,14 @@ package tugasuaspbo;
  * @author khoirul-06990
  */
 public class User {
-    private String username, password, email;
+    private String username, password, nama, alamat;
 
-    public User(String username, String password, String email) {
+    public User(String username, String password, String nama, String alamat) {
         this.username = username;
         this.password = password;
-        this.email = email;
-        Insert(username, password, email);
+        this.nama = nama;
+        this.alamat = alamat;
+        Insert(username, password, nama, alamat);
     }
     
     public User()
@@ -23,11 +24,12 @@ public class User {
         
     }
     
-    public static String Insert(String username, String Password, String email)
+    public static String Insert(String username, String Password, String nama, String alamat)
     {
-        return "VALUE("+null+","+username+","+Password+","+email+","+null+")";
+        return "INSERT INTO Users(id, username, password, nama, alamat, reg_date)"+
+                " VALUES ("+null+",'"+username+"','"+Password+"','"+nama+"','"+alamat+"',"+null+")";
     }
-
+    
     public String getUsername() {
         return username;
     }

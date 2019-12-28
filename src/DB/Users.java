@@ -13,8 +13,7 @@ public class Users{
     
     public static int Insert(String sql)
     {
-        String insert = "INSERT INTO Users(id,username,password,email,reg_date)"+sql;
-        int con = DB.execute(insert);
+        int con = DB.execute(sql);
         return con;
     }
     

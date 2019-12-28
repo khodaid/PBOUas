@@ -16,7 +16,8 @@ public class DB {
     public static Connection getKoneksi()
     {
         Connection con = null;
-        String konString = "jdbc:mysql://localhost:3306/PboUas";
+//        String konString = "jdbc:mysql://localhost:3306/PboUas";
+        String konString = "jdbc:mysql://localhost:3306/PboUas?zeroDateTimeBehavior=convertToNull";
         String username = "root";
         String pass = "";
         try {
@@ -28,7 +29,8 @@ public class DB {
     }
     
     public static Connection setKoneksi() {
-        String konString = "jdbc:mysql://localhost:3306/PboUas";
+//        String konString = "jdbc:mysql://localhost:3306/PboUas";
+        String konString = "jdbc:mysql://localhost:3306/PboUas?zeroDateTimeBehavior=convertToNull";
         String username = "root";
         String pass = "";
         Connection koneksi = null;
@@ -36,10 +38,7 @@ public class DB {
         Class.forName("com.mysql.jdbc.Driver");
         koneksi = (Connection) DriverManager.getConnection(konString,username,pass);
         System.out.println("Koneksi Berhasil");
-        } catch (ClassNotFoundException ex) {
-        Logger.getLogger(DB.class.getName()).log(Level.SEVERE, null, ex);
-        System.out.println("Koneksi Gagal");
-        } catch (SQLException ex) {
+        } catch (ClassNotFoundException | SQLException ex) {
         Logger.getLogger(DB.class.getName()).log(Level.SEVERE, null, ex);
         System.out.println("Koneksi Gagal");
         }
